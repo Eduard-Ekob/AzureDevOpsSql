@@ -45,7 +45,7 @@ namespace Games
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "ToDo API Staging and Deploy from Git to Azure Triggering",
+                    Title = "ToDo API Staging and Deploy from Git to Azure Triggering CI/CD",
                     Description = "A simple example ASP.NET Core Web API",
                     TermsOfService = "None",                    
                 });
