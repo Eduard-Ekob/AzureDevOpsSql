@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
+using BoardGames.Models;
+using BoardGames.Services;
 using Games.Models;
 using Games.Services;
 
@@ -28,12 +30,15 @@ namespace Games
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             string connectionString =
                 "Server=(localdb)\\mssqllocaldb;Database=usersdbstore;Trusted_Connection=True;MultipleActiveResultSets=true";
-
+            string connectionStringAdventureWorks =
+                "Server=tcp:azserv.database.windows.net,1433;Initial Catalog=azWorkshopSqldb;Persist Security Info=False;User ID=azureuser;Password=Freelove123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30";
             // Dependency Inject EF
             services.AddDbContext<BoardGamesContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<azWorkshopSqldbContext>(options => options.UseSqlServer(connectionStringAdventureWorks));
 
             // Dependency Inject BoardGameService
             services.AddTransient<BoardGameService>();
+            services.AddTransient<AdventureWorksService>();
 
             services.AddMemoryCache();
             services.AddResponseCaching();
@@ -88,7 +93,7 @@ namespace Games
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/swagger/v1/swagger.json", "My API V1");
             });
 
             app.UseMvc();
