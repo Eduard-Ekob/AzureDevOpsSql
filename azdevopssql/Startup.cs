@@ -31,7 +31,7 @@ namespace Games
             string connectionString =
                 "Server=(localdb)\\mssqllocaldb;Database=usersdbstore;Trusted_Connection=True;MultipleActiveResultSets=true";
             string connectionStringAdventureWorks =
-                "Server=tcp:azserv.database.windows.net,1433;Initial Catalog=azWorkshopSqldb;Persist Security Info=False;User ID=azureuser;Password=Freelove123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30";
+                "Server=tcp:azserv.database.windows.net,1433;Initial Catalog=azWorkshopSqldb;Persist Security Info=False;User ID=azureuser;Password=Firstdown123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30";
             // Dependency Inject EF
             services.AddDbContext<BoardGamesContext>(options => options.UseSqlServer(connectionString));
             services.AddDbContext<azWorkshopSqldbContext>(options => options.UseSqlServer(connectionStringAdventureWorks));
@@ -93,7 +93,7 @@ namespace Games
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/swagger/v1/swagger.json", "My API V1");
             });
 
             app.UseMvc();

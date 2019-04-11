@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
 namespace BoardGames.Models
 {
@@ -93,9 +93,11 @@ namespace BoardGames.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=tcp:azserv.database.windows.net,1433;Initial Catalog=azWorkshopSqldb;Persist Security Info=False;User ID=azureuser;Password=Freelove123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                optionsBuilder.UseSqlServer("Server=tcp:azserv.database.windows.net,1433;Initial Catalog=azWorkshopSqldb;Persist Security Info=False;User ID=azureuser;Password=Firstdown123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+
             }
         }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
