@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardGames", "BoardGames\BoardGames.csproj", "{47835B10-9092-4AD6-9325-95C147AC8926}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C0ADDA67-C952-4826-B7EE-A455E61EFB3D} = {C0ADDA67-C952-4826-B7EE-A455E61EFB3D}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGamesXUnitTests", "BoardGamesXUnitTests\BoardGamesXUnitTests.csproj", "{C0ADDA67-C952-4826-B7EE-A455E61EFB3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardGamesXUnitTests", "BoardGamesXUnitTests\BoardGamesXUnitTests.csproj", "{C0ADDA67-C952-4826-B7EE-A455E61EFB3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
