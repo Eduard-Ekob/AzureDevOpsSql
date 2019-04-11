@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardGames", "azdevopssql\BoardGames.csproj", "{47835B10-9092-4AD6-9325-95C147AC8926}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardGames.Tests", "BoardGames.Tests\BoardGames.Tests.csproj", "{8C78139B-EE98-4F79-B5A4-EB73554D397B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{47835B10-9092-4AD6-9325-95C147AC8926} = {47835B10-9092-4AD6-9325-95C147AC8926}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

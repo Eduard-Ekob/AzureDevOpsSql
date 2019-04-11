@@ -10,6 +10,7 @@ using BoardGames.Controllers;
 using BoardGames.Models;
 using BoardGames.Services;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace BoardGames.Tests
 {
