@@ -12,6 +12,10 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
     <PackageReference Include="nunit" Version="3.11.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
+	<PackageReference Include="BoardGames.Controllers" Version="0" />
+	<PackageReference Include="BoardGames.Models" Version="0" />
+	<PackageReference Include="BoardGames.Services" Version="0" />
+
   </ItemGroup>
   <ItemGroup>
     <Reference Include="BoardGames">
