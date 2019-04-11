@@ -20,29 +20,29 @@ namespace BoardGames.Services
             cache = memoryCache;
         }
 
-        //public async Task<Address> GetAddressAsync(int id)
-        //{
-        //    Address address = null;            
-        //    if (!cache.TryGetValue(id, out address))
-        //    {
-        //        address = await db.Address.FirstOrDefaultAsync(p => p.AddressId == id);
-        //        if (address != null)
-        //        {
-        //            cache.Set(address.AddressId, address,
-        //                new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(5)));
-        //        }
-        //    }
-
-        //    return address;
-        //}
-
-        public Address GetAddressAsync(int id)
+        public async Task<Address> GetAddressAsync(int id)
         {
             Address address = null;
-            address = db.Address.FirstOrDefault(p => p.AddressId == id);
+            if (!cache.TryGetValue(id, out address))
+            {
+                address = await db.Address.FirstOrDefaultAsync(p => p.AddressId == id);
+                if (address != null)
+                {
+                    cache.Set(address.AddressId, address,
+                        new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(5)));
+                }
+            }
 
             return address;
         }
+
+        //public Address GetAddressAsync(int id)
+        //{
+        //    Address address = null;
+        //    address = db.Address.FirstOrDefault(p => p.AddressId == id);
+
+        //    return address;
+        //}
 
         public void AddAddress(Address address)
         {

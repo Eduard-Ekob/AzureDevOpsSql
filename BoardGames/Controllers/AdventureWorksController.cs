@@ -18,18 +18,18 @@ namespace BoardGames.Controllers
             _adventureWorksService = service;
         }
 
-        ////GET api/<controller>/5
-        //[HttpGet("{id}")]
-        //public async Task<Address> GetAdress(int id)
-        //{
-        //    return await _adventureWorksService.GetAddressAsync(id);
-        //}
-
+        //GET api/<controller>/5
         [HttpGet("{id}")]
-        public Address GetAdress(int id)
+        public async Task<Address> GetAdress(int id)
         {
-            return _adventureWorksService.GetAddressAsync(id);
+            return await _adventureWorksService.GetAddressAsync(id);
         }
+
+        //[HttpGet("{id}")]
+        //public Address GetAdress(int id)
+        //{
+        //    return _adventureWorksService.GetAddressAsync(id);
+        //}
 
         //POST api/<controller>
         [HttpPost]
